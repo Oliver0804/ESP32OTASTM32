@@ -17,12 +17,12 @@
 //     You should have received a copy of the GNU General Public License
 //     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
-//    It is assumed that the STM32 MCU is connected to the following pins with NodeMCU or ESP32/8285.
+//    It is assumed that the STM32 MCU is connected to the following pins with NodeMCU or ESP32.
 //    Tested and supported MCU : STM32F03xF/K/C/，F05xF/K/C,F10xx8/B, F105/7
 //
-//    连接ESP32模块和STM32系列MCU.    Connect ESP32 to STM32 MCU
+//    Connect ESP32 to STM32 MCU
 //
-//    ESP32/8285 Pin       STM32 MCU      NodeMCU Pin(ESP32 based)
+//    ESP32 Pin       STM32 MCU      NodeMCU Pin(ESP32 based)
 //    RXD                    PA9             RXD
 //    TXD                   PA10            TXD
 //    Pin4                  BOOT0           D2
@@ -52,8 +52,8 @@
 #define BOOT0 4
 #define LED 2
 
-const char* ssid = "OpenWrt";      // your wifi ssid
-const char* password = "08041218";  // your wifi password
+const char* ssid = "ssid";      // your wifi ssid
+const char* password = "password";  // your wifi password
 
 const String STM32_CHIPNAME[47] = {
   "Unknown Chip",
@@ -407,7 +407,7 @@ void setup(void)
     else  {
       stringtmp = "ERROR";
     }
-    String starthtml = "<h1>STM32-OTA</h1><h2>Version 1.1 by <a style=\"color:white\" href=\"https://github.com/csnol/STM32-OTA\">CSNOL.<br><br>Fixed support for ESP32 by<a style=\"color:white\" href=\"https://github.com/Oliver0804\">oliver0804<br><br><a style=\"color:white\" href=\"/list\">Update STM32 BinFile </a><br><br></h2>";
+    String starthtml = "<h1>STM32-OTA</h1><h2>Version 1.1 by <a style=\"color:white\" href=\"https://github.com/csnol/STM32-OTA\">CSNOL.<br><br>Fixed support for ESP32 by  <a style=\"color:white\" href=\"https://github.com/Oliver0804\">  oliver0804<br><br><a style=\"color:white\" href=\"/list\">Update STM32 BinFile </a><br><br></h2>";
     server.send(200, "text/html", makePage("Start Page", starthtml + "- Init MCU -<br> " + stringtmp));
   });
   server.begin();
