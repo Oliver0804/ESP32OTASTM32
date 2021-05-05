@@ -407,7 +407,7 @@ void setup(void)
     else  {
       stringtmp = "ERROR";
     }
-    String starthtml = "<h1>STM32-OTA</h1><h2>Version 1.1 by <a style=\"color:white\" href=\"https://github.com/csnol/STM32-OTA\">CSNOL.<br><br>Fixed support for ESP32 by<a style=\"color:white\" href=\"https://github.com/Oliver0804\">oliver0804<br><br><a style=\"color:white\" href=\"/list\">List STM32 BinFile </a><br><br></h2>";
+    String starthtml = "<h1>STM32-OTA</h1><h2>Version 1.1 by <a style=\"color:white\" href=\"https://github.com/csnol/STM32-OTA\">CSNOL.<br><br>Fixed support for ESP32 by<a style=\"color:white\" href=\"https://github.com/Oliver0804\">oliver0804<br><br><a style=\"color:white\" href=\"/list\">Update STM32 BinFile </a><br><br></h2>";
     server.send(200, "text/html", makePage("Start Page", starthtml + "- Init MCU -<br> " + stringtmp));
   });
   server.begin();
